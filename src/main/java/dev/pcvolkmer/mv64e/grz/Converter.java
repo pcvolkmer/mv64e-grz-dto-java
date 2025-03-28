@@ -1,7 +1,6 @@
 package dev.pcvolkmer.mv64e.grz;
 
 import java.io.IOException;
-
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.core.JsonParser;
@@ -72,21 +71,21 @@ public class Converter {
         SimpleModule module = new SimpleModule();
         module.addDeserializer(Date.class, new JsonDeserializer<Date>() {
             @Override
-            public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+            public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
                 String value = jsonParser.getText();
                 return Converter.parseAllDateTimeString(value);
             }
         });
         module.addDeserializer(Date.class, new JsonDeserializer<Date>() {
             @Override
-            public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+            public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
                 String value = jsonParser.getText();
                 return Converter.parseAllDateTimeString(value);
             }
         });
         module.addDeserializer(Date.class, new JsonDeserializer<Date>() {
             @Override
-            public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+            public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
                 String value = jsonParser.getText();
                 return Converter.parseAllDateTimeString(value);
             }

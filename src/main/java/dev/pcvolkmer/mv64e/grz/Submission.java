@@ -5,6 +5,8 @@ import java.util.Date;
 
 public class Submission {
     private String clinicalDataNodeId;
+    private CoverageType coverageType;
+    private DiseaseType diseaseType;
     private String genomicDataCenterId;
     private GenomicStudySubtype genomicStudySubtype;
     private GenomicStudyType genomicStudyType;
@@ -22,6 +24,22 @@ public class Submission {
     public String getClinicalDataNodeId() { return clinicalDataNodeId; }
     @JsonProperty("clinicalDataNodeId")
     public void setClinicalDataNodeId(String value) { this.clinicalDataNodeId = value; }
+
+    /**
+     * Health insurance providers
+     */
+    @JsonProperty("coverageType")
+    public CoverageType getCoverageType() { return coverageType; }
+    @JsonProperty("coverageType")
+    public void setCoverageType(CoverageType value) { this.coverageType = value; }
+
+    /**
+     * Type of the disease
+     */
+    @JsonProperty("diseaseType")
+    public DiseaseType getDiseaseType() { return diseaseType; }
+    @JsonProperty("diseaseType")
+    public void setDiseaseType(DiseaseType value) { this.diseaseType = value; }
 
     /**
      * ID of the genomic data center in the format GRZXXXnnn.
@@ -56,7 +74,8 @@ public class Submission {
     public void setLabName(String value) { this.labName = value; }
 
     /**
-     * A local case identifier for synchronizing locally
+     * A local case identifier of the Leistungserbringer to be able to track multiple
+     * submissions referring to the same index patient
      */
     @JsonProperty("localCaseId")
     public String getLocalCaseId() { return localCaseId; }
@@ -91,8 +110,8 @@ public class Submission {
     public void setSubmitterId(String value) { this.submitterId = value; }
 
     /**
-     * The VNg of the genomic data of the patient that will be reimbursed --> a unique 32-length
-     * byte code represented in a hex string of length 64.
+     * The VNg of the genomic data of the index patient that will be reimbursed --> a unique
+     * 32-length byte code represented in a hex string of length 64.
      */
     @JsonProperty("tanG")
     public String getTanG() { return tanG; }

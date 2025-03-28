@@ -15,8 +15,7 @@ public class SequenceData {
     private double minCoverage;
     private boolean nonCodingVariants;
     private PercentBasesAboveQualityThreshold percentBasesAboveQualityThreshold;
-    private long readLength;
-    private String referenceGenome;
+    private ReferenceGenome referenceGenome;
     private double targetedRegionsAboveMinCoverage;
 
     /**
@@ -85,21 +84,13 @@ public class SequenceData {
     public void setPercentBasesAboveQualityThreshold(PercentBasesAboveQualityThreshold value) { this.percentBasesAboveQualityThreshold = value; }
 
     /**
-     * The read length; in the case of long-read sequencing it is the rounded average read
-     * length.
-     */
-    @JsonProperty("readLength")
-    public long getReadLength() { return readLength; }
-    @JsonProperty("readLength")
-    public void setReadLength(long value) { this.readLength = value; }
-
-    /**
-     * Reference genome used
+     * Reference genome used according to the Genome Reference Consortium
+     * (https://www.ncbi.nlm.nih.gov/grc)
      */
     @JsonProperty("referenceGenome")
-    public String getReferenceGenome() { return referenceGenome; }
+    public ReferenceGenome getReferenceGenome() { return referenceGenome; }
     @JsonProperty("referenceGenome")
-    public void setReferenceGenome(String value) { this.referenceGenome = value; }
+    public void setReferenceGenome(ReferenceGenome value) { this.referenceGenome = value; }
 
     /**
      * Fraction of targeted regions that are above minimum coverage

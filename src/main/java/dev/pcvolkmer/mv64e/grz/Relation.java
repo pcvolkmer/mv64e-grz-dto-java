@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.*;
  * 'mother', etc.
  */
 public enum Relation {
-    BROTHER, CHILD, FATHER, MOTHER, OTHER, SELF, SISTER;
+    BROTHER, CHILD, FATHER, INDEX, MOTHER, OTHER, SISTER;
 
     @JsonValue
     public String toValue() {
@@ -16,9 +16,9 @@ public enum Relation {
             case BROTHER: return "brother";
             case CHILD: return "child";
             case FATHER: return "father";
+            case INDEX: return "index";
             case MOTHER: return "mother";
             case OTHER: return "other";
-            case SELF: return "self";
             case SISTER: return "sister";
         }
         return null;
@@ -29,9 +29,9 @@ public enum Relation {
         if (value.equals("brother")) return BROTHER;
         if (value.equals("child")) return CHILD;
         if (value.equals("father")) return FATHER;
+        if (value.equals("index")) return INDEX;
         if (value.equals("mother")) return MOTHER;
         if (value.equals("other")) return OTHER;
-        if (value.equals("self")) return SELF;
         if (value.equals("sister")) return SISTER;
         throw new IOException("Cannot deserialize Relation");
     }

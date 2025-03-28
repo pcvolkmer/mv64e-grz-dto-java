@@ -10,6 +10,7 @@ public class File {
     private FileType fileType;
     private String flowcellId;
     private String laneId;
+    private Long readLength;
     private ReadOrder readOrder;
 
     /**
@@ -68,6 +69,15 @@ public class File {
     public String getLaneId() { return laneId; }
     @JsonProperty("laneId")
     public void setLaneId(String value) { this.laneId = value; }
+
+    /**
+     * The read length; in the case of long-read sequencing it is the rounded average read
+     * length.
+     */
+    @JsonProperty("readLength")
+    public Long getReadLength() { return readLength; }
+    @JsonProperty("readLength")
+    public void setReadLength(Long value) { this.readLength = value; }
 
     /**
      * Indicates the read order for paired-end reads.

@@ -12,9 +12,9 @@ public enum Method {
     @JsonValue
     public String toValue() {
         switch (this) {
-            case BIOINFORMATICS: return "Bioinformatics";
+            case BIOINFORMATICS: return "bioinformatics";
             case OTHER: return "other";
-            case PATHOLOGY: return "Pathology";
+            case PATHOLOGY: return "pathology";
             case UNKNOWN: return "unknown";
         }
         return null;
@@ -22,9 +22,9 @@ public enum Method {
 
     @JsonCreator
     public static Method forValue(String value) throws IOException {
-        if (value.equals("Bioinformatics")) return BIOINFORMATICS;
+        if (value.equals("bioinformatics")) return BIOINFORMATICS;
         if (value.equals("other")) return OTHER;
-        if (value.equals("Pathology")) return PATHOLOGY;
+        if (value.equals("pathology")) return PATHOLOGY;
         if (value.equals("unknown")) return UNKNOWN;
         throw new IOException("Cannot deserialize Method");
     }
