@@ -14,7 +14,7 @@ public class Donor {
     /**
      * A unique identifier given by the Leistungserbringer for each donor of a single, duo or
      * trio sequencing; the donorPseudonym needs to be identifiable by the Leistungserbringer in
-     * case of changes to the consents by one of the donors. For Index patient use TanG.
+     * case of changes to the consents by one of the donors. For Index patient use index.
      */
     @JsonProperty("donorPseudonym")
     public String getDonorPseudonym() { return donorPseudonym; }

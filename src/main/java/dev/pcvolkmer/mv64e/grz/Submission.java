@@ -26,7 +26,10 @@ public class Submission {
     public void setClinicalDataNodeId(String value) { this.clinicalDataNodeId = value; }
 
     /**
-     * Health insurance providers
+     * "GKV" gesetzliche Krankenversicherung, "PKV" private Krankenversicherung, "BG"
+     * Berufsgenossenschaft, "SEL" Selbstzahler, "SOZ" Sozialamt, "GPV" gesetzliche
+     * Pflegeversicherung, "PPV" private Pflegeversicherung, "BEI" Beihilfe, "SKT" Sonstige
+     * Kostenträger, "UNK" Unbekannt
      */
     @JsonProperty("coverageType")
     public CoverageType getCoverageType() { return coverageType; }

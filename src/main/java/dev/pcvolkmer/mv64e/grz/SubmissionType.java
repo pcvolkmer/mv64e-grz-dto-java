@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.*;
  * 'addition' for additional submission, 'correction' for correction
  */
 public enum SubmissionType {
-    ADDITION, CORRECTION, FOLLOWUP, INITIAL;
+    ADDITION, CORRECTION, FOLLOWUP, INITIAL, TEST;
 
     @JsonValue
     public String toValue() {
@@ -17,6 +17,7 @@ public enum SubmissionType {
             case CORRECTION: return "correction";
             case FOLLOWUP: return "followup";
             case INITIAL: return "initial";
+            case TEST: return "test";
         }
         return null;
     }
@@ -27,6 +28,7 @@ public enum SubmissionType {
         if (value.equals("correction")) return CORRECTION;
         if (value.equals("followup")) return FOLLOWUP;
         if (value.equals("initial")) return INITIAL;
+        if (value.equals("test")) return TEST;
         throw new IOException("Cannot deserialize SubmissionType");
     }
 }

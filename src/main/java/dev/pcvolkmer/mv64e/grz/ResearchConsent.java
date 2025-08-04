@@ -26,9 +26,11 @@ public class ResearchConsent {
     public void setSchemaVersion(SchemaVersion value) { this.schemaVersion = value; }
 
     /**
-     * Scope of the research consent in JSON format following the MII IG Consent v2025 FHIR schema.
-     * See 'https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Consent_V2025/MII-IG-Modul-Consent.html'
-     * and 'https://packages2.fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.consent'.
+     * Scope of the research consent in JSON format following the MII IG Consent v2025 FHIR
+     * schema. See
+     * 'https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Consent_V2025/MII-IG-Modul-Consent.html'
+     * and
+     * 'https://packages2.fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.consent'.
      */
     @JsonProperty("scope")
     public Map<String, Object> getScope() { return scope; }

@@ -30,8 +30,9 @@ public class File {
     public void setFileChecksum(String value) { this.fileChecksum = value; }
 
     /**
-     * Path relative to the submission root, e.g.:
-     * sequencing_data/patient_001/patient_001_dna.bam
+     * Path relative to the submission files directory, e.g.:
+     * 'patient_001/patient_001_dna.fastq.gz' if the file is located in <submission
+     * root>/files/patient_001/patient_001_dna.fastq.gz
      */
     @JsonProperty("filePath")
     public String getFilePath() { return filePath; }
